@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const productSchema = require("./app/schema/productSchema.js");
 const cors = require("cors");
 const pizzasRoute = require("./app/routes/pizzas.js");
+const orderRoute = require("./app/routes/userOrders");
 const port = process.env.PORT || 5000;
 
 // middleware
@@ -26,3 +27,4 @@ mongoose.connection.on("error", (err) => {
 });
 
 app.use("/pizzas", pizzasRoute);
+app.use("/user", orderRoute);

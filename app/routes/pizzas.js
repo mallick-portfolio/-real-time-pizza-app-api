@@ -9,7 +9,6 @@ const Pizzas = mongoose.model("Pizzas", productSchema);
 router.get("/", async (req, res) => {
   const filter = {};
   const all = await Pizzas.find(filter);
-  console.log(all)
   res.send(all)
 });
 
